@@ -13,13 +13,16 @@ public class Mediaplayer extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mediaplayer);
-
-
+        try {
+            play();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
 
-    public static void main(String [] args)throws IOException {
+    public static void play()throws IOException {
 
         //hacking together a music playing function below
 
