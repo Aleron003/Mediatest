@@ -13,6 +13,8 @@ public class Mediaplayer extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mediaplayer);
+
+
         try {
             play();
         } catch (IOException e) {
@@ -39,6 +41,13 @@ public class Mediaplayer extends AppCompatActivity  {
         System.out.println("Preparing");
         mPlayer.start();
         System.out.println("Playing");
+
+        while (mPlayer.isPlaying() == false){ //Will be used in future for 'reactions'
+            System.out.println("Restarting");
+            mPlayer.stop();
+            mPlayer.prepare();
+            mPlayer.start();
+        }
 
     }
 }
