@@ -28,14 +28,14 @@ public class Mediaplayer extends AppCompatActivity  {
 
         //hacking together a music playing function below
 
-        String url = "http://soundbible.com/grab.php?id=1986&type=mp3";
+        String sUrl = "http://soundbible.com/grab.php?id=1986&type=mp3"; //URL for a generic explosion sound
         MediaPlayer mPlayer = new MediaPlayer();
 
         mPlayer.reset();
         System.out.println("Resetting");
         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         System.out.println("Setting stream type");
-        mPlayer.setDataSource(url);
+        mPlayer.setDataSource(sUrl);
         System.out.println("Grabbing from URL");
         mPlayer.prepare();
         System.out.println("Preparing");
